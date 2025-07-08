@@ -10,11 +10,13 @@
       "clock"
     ],
     "modules-right": [
+      "custom/dropbox",
       "bluetooth",
       "network",
       "pulseaudio",
       "cpu",
       "battery",
+      "power-profiles-daemon",
       "custom/power-menu"
     ],
     "hyprland/workspaces": {
@@ -50,6 +52,15 @@
       "format": "{:%A %H:%M}",
       "format-alt": "{:%d %B W%V %Y}",
       "tooltip": false
+    },
+    "custom/dropbox": {
+      "format": "",
+      "on-click": "nautilus ~/Dropbox",
+      "exec": "dropbox-cli status",
+      "return-type": "text",
+      "interval": 5,
+      "tooltip": true,
+      "tooltip-format": "{}"
     },
     "network": {
       "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
@@ -101,6 +112,16 @@
       "tooltip-format": "Playing at {volume}%",
       "on-click-right": "pamixer -t",
       "ignored-sinks": ["Easy Effects Sink"]
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}",
+      "tooltip": true,
+      "format-icons": {
+        "power-saver": "󰡳",
+        "balanced":     "󰊚",
+        "performance":  "󰡴"
+      }
     },
     "custom/power-menu": {
       "format": "󰐥",
